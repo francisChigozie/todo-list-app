@@ -1,0 +1,2 @@
+(this["webpackJsonptodo-list-app"]=this["webpackJsonptodo-list-app"]||[]).push([[0],{10:function(e,t,c){"use strict";c.r(t);c(1);var s=c(3),n=c.n(s),o=(c(8),c(0));var i=function(){return Object(o.jsxs)("div",{className:"App",children:[Object(o.jsx)("h1",{children:"To Do List"}),Object(o.jsx)("p",{children:"[1] Walk the Dog "}),Object(o.jsx)("p",{children:"[2] Buy Ice cream "}),Object(o.jsx)("p",{children:"[3] Read a Book"})]})};n.a.render(Object(o.jsx)(i,{}),document.getElementById("root"))},8:function(e,t,c){}},[[10,1,2]]]);
+//# sourceMappingURL=main.087224ab.chunk.js.map
