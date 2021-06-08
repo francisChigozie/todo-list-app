@@ -9,8 +9,7 @@ function AddTodo ({setTodos}) {
         const text = e.target.elements.input.value
         const todo = {id: Math.random(), text}
         setTodos(prev => prev.concat(todo))
-        
-        
+        e.target.elements.input.value = ''
 
     }
 
