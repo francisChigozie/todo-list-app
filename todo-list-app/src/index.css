@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.app{
+  text-align: center;
+}
+.primary{
+  color: orange;
+  text-align: center;
+}
+.blue{
+  color: rgb(47, 95, 255);
+  text-align: center;
+}
+.zone{
+  background-color: rgb(0, 255, 234);
+}
