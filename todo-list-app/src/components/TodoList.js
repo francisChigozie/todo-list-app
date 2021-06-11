@@ -68,6 +68,11 @@ function AddTodo({setTodos}){
     function handleAddTodo(event){
         event.preventDefault();
         const text = event.target.elements.addTodo.value;
+
+         if(!text){
+                return  'Pls what todo..';
+        }else{
+
         const todo = {
             id: Math.random(),
             text,
@@ -78,6 +83,7 @@ function AddTodo({setTodos}){
         })
         inputRef.current.value = "";
     }
+}
     return(
        <form onSubmit={handleAddTodo}>
            <fieldset className="zone">
