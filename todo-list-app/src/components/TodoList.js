@@ -1,11 +1,21 @@
 import React from 'react';
 
+const LS_Key = 'reactApp.todos'
+
 function TodoList(){
-    const [todos, setTodos] = React.useState([
-    {id: 1, text: "Walk the dog", done: false},
-    {id: 2, text: "Make breakfast", done: false},
-    {id: 3, text: "Do school run", done: false}
-  ]);
+    const [todos, setTodos] = React.useState([]);
+
+  React.useEffect(() => {
+      const storedTodos = JSON.parse(localStorage.getItem(LS_Key))
+      if (storedTodos) setTodos(storedTodos)
+
+  }, [])
+
+  React.useEffect(() => {
+      localStorage.setItem(LS_Key, JSON.stringify(todos))
+  }, [todos])
+
+  
 
   function handleToggleTodo(todo){
     const updatedTodos = todos.map(t => 
