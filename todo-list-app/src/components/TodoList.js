@@ -1,11 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+
+  const LS_Key = 'reactApp.todos';
 
 function TodoList(){
+    
     const [todos, setTodos] = React.useState([
     {id: 1, text: "Walk the dog", done: false},
     {id: 2, text: "Make breakfast", done: false},
     {id: 3, text: "Do school run", done: false}
   ]);
+ 
+
+   React.useEffect(() => {
+       const storedTodos = JSON.parse(localStorage.getItem(LS_Key))
+       if(storedTodos) setTodos(storedTodos)
+   }, [])
+
+  useEffect(() => {
+     localStorage.setItem(LS_Key, JSON.stringify(todos))
+  }, [todos])
+ 
+
 
   function handleToggleTodo(todo){
     const updatedTodos = todos.map(t => 
@@ -57,7 +72,7 @@ function DeleteTodo({todo, setTodos}){
             color: 'red',
             fontWeight: 'bold',
             marginLeft: 10,
-        }}>x</span> 
+        }}><input type="radio" /></span> 
     )
 }
 
@@ -68,9 +83,9 @@ function AddTodo({setTodos}){
     function handleAddTodo(event){
         event.preventDefault();
         const text = event.target.elements.addTodo.value;
-
+        
          if(!text){
-                return  'Pls what todo..';
+                return 'Please type what to do ..';
         }else{
 
         const todo = {
